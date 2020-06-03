@@ -20,8 +20,11 @@ jobs:
           brew install shfmt shellcheck
           shfmt -d .
 
+      - name: shellcheck
+        if: matrix.os == 'windows-latest'
+        run: choco install shellcheck
+
       - name: tests shell
-        if: matrix.os != 'windows-latest'
         shell: bash
         run: ./install_test.sh
 
