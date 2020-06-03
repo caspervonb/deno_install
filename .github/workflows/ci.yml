@@ -22,7 +22,7 @@ jobs:
 
       - name: shellcheck
         if: matrix.os == 'windows-latest'
-        run: choco install shellcheck
+        run: stack install shellcheck
 
       - name: tests shell
         shell: bash
